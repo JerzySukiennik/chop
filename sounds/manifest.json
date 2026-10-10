@@ -1,0 +1,44 @@
+{
+ "carrot": [
+  "carrot_201033_0.mp3",
+  "carrot_201033_1.mp3",
+  "carrot_201033_2.mp3",
+  "carrot_201033_3.mp3",
+  "carrot_201033_4.mp3",
+  "carrot_201033_5.mp3",
+  "carrot_634119_0.mp3",
+  "carrot_634119_1.mp3",
+  "carrot_634119_2.mp3",
+  "carrot_634119_3.mp3",
+  "carrot_634119_4.mp3",
+  "carrot_634119_5.mp3",
+  "carrot_87984_0.mp3",
+  "carrot_87984_1.mp3",
+  "carrot_87984_2.mp3",
+  "carrot_87984_3.mp3",
+  "carrot_87984_4.mp3",
+  "carrot_87984_5.mp3"
+ ],
+ "cucumber": [
+  "cucumber_163275_0.mp3",
+  "cucumber_163275_1.mp3",
+  "cucumber_163275_2.mp3",
+  "cucumber_163275_3.mp3",
+  "cucumber_163275_4.mp3",
+  "cucumber_163275_5.mp3",
+  "cucumber_625624_0.mp3",
+  "cucumber_625624_1.mp3",
+  "cucumber_625624_2.mp3",
+  "cucumber_625624_3.mp3",
+  "cucumber_625624_4.mp3",
+  "cucumber_625624_5.mp3"
+ ],
+ "apple": [
+  "apple_627197_0.mp3",
+  "apple_627197_1.mp3",
+  "apple_627197_2.mp3",
+  "apple_627197_3.mp3",
+  "apple_627197_4.mp3",
+  "apple_627197_5.mp3"
+ ]
+}

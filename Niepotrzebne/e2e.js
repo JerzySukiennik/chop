@@ -1,0 +1,24 @@
+const { chromium } = require('/Users/jurek/Downloads/Claude/Projects/Flop/node_modules/playwright-core');
+const { spawn } = require('child_process');
+(async () => {
+  const browser = await chromium.launch({ channel: 'chrome', headless: true, args: ['--use-angle=metal', '--enable-gpu'] });
+  const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  await page.goto('http://localhost:8790/');
+  await page.waitForFunction(() => window.chop && window.chop.pieces.length === 1, null, { timeout: 30000 });
+  await page.waitForTimeout(1500);
+  const fake = spawn('node', [__dirname + '/fake-phone.js']);
+  let out = '';
+  fake.stdout.on('data', d => out += d);
+  await page.waitForTimeout(2600);
+  await page.screenshot({ path: __dirname + '/e2e-mid.png' });
+  await new Promise(r => fake.on('exit', r));
+  await page.waitForTimeout(800);
+  const res = await page.evaluate(() => ({ slices: document.getElementById('slices').textContent, pieces: window.chop.pieces.length, conn: document.getElementById('connText').textContent, fps: 0 }));
+  const fps = await page.evaluate(() => new Promise(r => { let n = 0; const t0 = performance.now(); const f = () => { n++; if (performance.now() - t0 < 1000) requestAnimationFrame(f); else r(n); }; requestAnimationFrame(f); }));
+  await page.screenshot({ path: __dirname + '/e2e-end.png' });
+  console.log(JSON.stringify({ res, fps, phone: out.trim(), errors }));
+  await browser.close();
+})();

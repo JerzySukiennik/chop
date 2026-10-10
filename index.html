@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+    "rapier": "https://cdn.jsdelivr.net/npm/@dimforge/rapier3d-compat@0.19.3/rapier.mjs"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="conn" class="chip"><span class="dot"></span><span id="connText">Łączenie…</span></div>
+<div id="count"><b id="slices">0</b><span>cięć</span></div>
+<div id="hint"></div>
+<div id="big"></div>
+<div id="sound" class="chip">Kliknij, żeby włączyć dźwięk</div>
+<div id="keys">1 marchewka · 2 ogórek · 3 jabłko · R od nowa · C kalibracja · myszka: przytrzymaj, żeby ciąć, kółko obraca nóż</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
